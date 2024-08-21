@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="{{ url_for('static', filename='JS/schedule.js') }}" type="text/javascript" ></script>
+        <link href="{{ url_for('static', filename='CSS/schedule.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the schedule app</h1>
+
+            <form method="post">
+                <div class="input-container">
+                    <label>Course Numbers:</label>
+                    <input type="text" name="classIds" placeholder="Enter classes separated by commas (ex: AEM124,BUS100,CS245,cs111)">
+
+                    <p>Do you want your courses spread out through the week or bunched up together?</p>
+                    <input type="radio" id="bunch" name="range" value="bunch" required> Bunch
+                    <input type="radio" id="spread" name="range" value="spread"> Spread
+
+                    <p>Do you prefer classes earlier or later in the day?</p>
+                    <input type="radio" id="earlier" name="time" value="early" required> Earlier
+                    <input type="radio" id="later" name="time" value="late"> Later
+
+                    <p>Do you want to show all possible schedules?</p>
+                    <input type="radio" id="show_all" name="show_list" value="show_all" required> Show All
+                    <input type="radio" id="show_5" name="show_list" value="show_5"> Show Top 5
+                </div>
+                <div class="button-container">
+                    <a class="fcc-btn refresh-btn" href="/">REFRESH</a>
+                    <button type="submit" class="submit-btn">Generate schedule</button>
+                </div>
+            </form>
+
+            {% if schedules != "" %}
+        <div class="calendar">
+            <div class="calendar-header">
+                <p class="calendar-title">Class Schedule</p>
+            </div>
+            <div class="calendar-container">
+                {% if not_class|length > 0 %}
+                    <p>Invalid inputs: {{not_class}}</p>
+                {% endif %}
+                <p>Showing schedules for: {{is_class}}</p><br>
+
+                {% for i in range(len_schedules) %}
+                    <label>Rank: {{i+1}}</label>
+                    {% for schedule in schedules[i] %}
+                        <li>{{schedule}}</li>
+                    {% endfor %}
+                    <br>
+                    <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                            <th>Saturday</th>
+                            <th>Sunday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for day in ['M', 'T', 'W', 'R', 'F', 'S', 'U'] %}
+                                <td>
+                                    {% if day in schedule_list[i] %}
+                                        {% for class in schedule_list[i][day] %}
+                                            <div class="class-entry">{{class}}</div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    </tbody>
+                </table><br>
+
+                    {% if not i + 1 == len_schedules %}
+                        <hr class="schedule-divider">
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        </div>
+    </body>
+</html>

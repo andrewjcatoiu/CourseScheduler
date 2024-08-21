@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://events.usfca.edu/sites/default/files/styles/1920x1080/public/2022-07/st%20ignatius%20aerial.jpg?itok=epXaPXEq');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(3px);
+    color: #333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.input-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type=text] {
+    width: 100%;
+    border: none;
+    background-color: #F1F1F1;
+    height: 40px;
+    padding-left: 1.2em;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.calendar {
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.calendar-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.calendar-container {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.calendar-container td {
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #ddd;
+}
+
+.calendar-container th {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+   
+}
+
+.time, .days {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.refresh-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.schedule-separator {
+    margin: 20px 0;
+    border-top: 2px solid #ddd;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.fcc-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th {
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+}
+
+.schedule-table td {
+    border: 1px solid #d3d3d3;
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.class-entry {
+    margin-bottom: 4px;
+}
